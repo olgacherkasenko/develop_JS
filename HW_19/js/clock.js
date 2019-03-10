@@ -2,36 +2,35 @@ let parentElemFooter = document.getElementById("footer");
 let parentElemHeader = document.getElementById("header");
 
 let clockDiv = document.createElement("div");
-let hoursSpan = document.createElement("span");
-let minutesSpan = document.createElement("span");
-let secondsSpan = document.createElement("span");
+let nodesOfClock = [];
+for( let i = 0; i < 5; i++){
+    nodesOfClock[i] = document.createElement("span");
+}
 
 let dateDiv = document.createElement("div");
-let daySpan = document.createElement("span");
-let monthSpan = document.createElement("span");
-let yearSpan = document.createElement("span");
-let dayNameSpan = document.createElement("span");
-
+let nodesOfDate = [];
+for( let i = 0; i < 4; i++){
+    nodesOfDate[i] = document.createElement("span");
+}
 clockDiv.className = "header__clock_div";
-hoursSpan.innerHTML = getCurrentHours() + ":";
-minutesSpan.innerHTML = getCurrentMinutes() + ":";
-secondsSpan.innerHTML = getCurrentSeconds();
+nodesOfClock[0].innerHTML = getCurrentHours();
+nodesOfClock[1].innerHTML = ':';
+nodesOfClock[2].innerHTML = getCurrentMinutes();
+nodesOfClock[3].innerHTML = ':';
+nodesOfClock[4].innerHTML = getCurrentSeconds();
 
 dateDiv.className = "footer__date_div";
-dayNameSpan.innerHTML  = getNameOfDay() + ', ';
-daySpan.innerHTML = getCurrentDay() + ".";
-monthSpan.innerHTML = getCurrentMonth() + ".";
-yearSpan.innerHTML = getCurrentYear();
+nodesOfDate[0].innerHTML  = getNameOfDay() + ', ';
+nodesOfDate[1].innerHTML = getCurrentDay() + ".";
+nodesOfDate[2].innerHTML = getCurrentMonth() + ".";
+nodesOfDate[3].innerHTML = getCurrentYear();
 
-clockDiv.appendChild(hoursSpan);
-clockDiv.appendChild(minutesSpan);
-clockDiv.appendChild(secondsSpan);
-
-dateDiv.appendChild(dayNameSpan);
-dateDiv.appendChild(daySpan);
-dateDiv.appendChild(monthSpan);
-dateDiv.appendChild(yearSpan);
-
+for( let i = 0; i < nodesOfClock.length; i++) {
+    clockDiv.appendChild(nodesOfClock[i]);
+}
+for( let i = 0; i < nodesOfDate.length; i++) {
+    dateDiv.appendChild(nodesOfDate[i]);
+}
 parentElemHeader.appendChild(clockDiv);
 parentElemFooter.appendChild(dateDiv);
 
@@ -53,7 +52,6 @@ function getCurrentSeconds() {
     let currentSeconds = currentDate.getSeconds();
     return checkCurrentData(currentSeconds);
 }
-
 function getCurrentDay() {
     let currentDate = new Date();
     let currentDay = currentDate.getDate();
@@ -72,19 +70,19 @@ function getCurrentYear() {
 function getNameOfDay() {
     let currentDate = new Date();
     let nameOfDay = currentDate.getDay();
-    let days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-    return days[nameOfDay - 1];
+    let days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+    return days[nameOfDay];
+}
+function checkClockTime(nameOfSpan, valueTime){
+    if (nameOfSpan.textContent !== valueTime.toString()) {
+        nameOfSpan.innerHTML = valueTime;
+    }
 }
 setInterval(() => {
-    if (hoursSpan.textContent != getCurrentHours() + ":") {
-        hoursSpan.innerHTML = getCurrentHours() + ":";
-    }
-    if (minutesSpan.textContent != getCurrentMinutes() + ":") {
-        console.log(minutesSpan.textContent);
-        console.log(getCurrentMinutes() + ":");
-        minutesSpan.innerHTML = getCurrentMinutes() + ":";
-    }
-    if (secondsSpan.textContent != getCurrentSeconds()) {
-        secondsSpan.innerHTML = getCurrentSeconds();
-    }
+    console.log(nodesOfClock[0].textContent);
+    console.log(getCurrentHours());
+    checkClockTime(nodesOfClock[0], getCurrentHours());
+    checkClockTime(nodesOfClock[2], getCurrentMinutes());
+    checkClockTime(nodesOfClock[4], getCurrentSeconds());
+
 }, 1000);
