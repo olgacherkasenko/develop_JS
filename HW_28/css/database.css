@@ -1,0 +1,88 @@
+.section__database_form {
+    width: 80%;
+    margin: 50px auto;
+}
+.section__database_input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Tahoma", sans-serif;
+    font-size: 16px;
+    color: #374370;
+    text-transform: uppercase;
+}
+.section__database_input label {
+    margin-top: 10px;
+}
+.section__database_input input{
+    margin-left: 20px;
+}
+.section__database_buttons {
+    margin-top: 20px;
+}
+.section__database_buttons input{
+    color: #302e2e;
+    font-size: 14px;
+    padding: 5px 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 80px;
+    border-radius: 25px;
+    border-color: #D2D2D4;
+    outline: none;
+}
+.button_save_active {
+    background: linear-gradient(to bottom, lightgreen, mediumseagreen);
+}
+.button_save_inactive{
+    background: linear-gradient(to bottom,lightgrey, grey);
+}
+.section__database_buttons input:nth-child(2) {
+    background: linear-gradient(to bottom, lightblue, cornflowerblue);
+}
+.section__database_buttons input:nth-child(3) {
+    background: linear-gradient(to bottom, lightblue, cornflowerblue);
+}
+.section__database_buttons input:nth-child(4) {
+    background: linear-gradient(to bottom, lightblue, cornflowerblue);
+}
+.section__database_table{
+    width: 80%;
+    margin: 20px auto;
+}
+.student-table {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #3A405A;
+    font-family: "Times New Roman", sans-serif;
+    color: black;
+    text-align: center;
+}
+.student-table th{
+   padding: 5px;
+}
+.btn_edit {
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    color: green;
+}
+.btn_delete{
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+}
+
+.message_error {
+    position: absolute;
+    margin-left: 5px;
+    background-color: #EC1C20;
+    color: white;
+    font-size: 10px;
+    border: 1px solid #1D0104;
+    border-radius: 10px;
+    padding: 5px;
+    visibility: hidden;
+}

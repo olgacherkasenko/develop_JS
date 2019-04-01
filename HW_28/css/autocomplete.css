@@ -1,0 +1,29 @@
+#map {
+    width: 60%;
+    height: 400px;
+    margin: 25px auto;
+}
+.header__input_autocomplete {
+    width: 25%;
+    margin: 5px 0 0 25px;
+}
+#inputAuto {
+    margin: -5px auto;
+}
+.weather-city__icon{
+    width: 20px;
+    height: 20px;
+}
+.weather-desc {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+@media screen and (max-width: 670px) {
+    .header__input_autocomplete {
+        margin: -30px auto;
+    }
+}

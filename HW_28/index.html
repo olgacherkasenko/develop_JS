@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/database.css">
+    <link rel="stylesheet" href="css/autocomplete.css">
+    <script src="js/clock.js" defer></script>
+    <script src="js/windowResize.js" defer></script>
+    <script src="js/timer.js" defer></script>
+    <script src="js/tables.js" defer></script>
+    <script src="js/buttonColor.js" defer></script>
+    <script src="js/showSection.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/database.js" defer></script>
+    <script src="js/autocomplete.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBp7xtptC3yhBvqwdp1aDziSq2dbK1j_0&libraries=places&callback=initMap" async defer>
+    </script>
+    <title>Layout</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header" id = "header">
+        <input type="checkbox" id="nav__trigger"/>
+        <label for="nav__trigger">
+            <span class="trigger__btn">&#9776;</span>
+        </label>
+        <div class="menu header__menu_mobile">
+            <a href="#HW_1" class="menu__link_mobile">Homework 1</a>
+            <a href="#HW_2" class="menu__link_mobile">Homework 2</a>
+            <a href="#HW_3" class="menu__link_mobile">Homework 3</a>
+            <a href="#HW_4" class="menu__link_mobile">Homework 4</a>
+            <a href="#HW_5" class="menu__link_mobile">Homework 5</a>
+        </div>
+        <div class="header__input_autocomplete">
+            <label for="inputAuto"></label>
+            <input type="text" id="inputAuto">
+            <p class="weather-desc"></p>
+        </div>
+    </header>
+        <main class="content">
+            <aside class="sidebar">
+                <div class="sidebar__menu">
+                    <a href="#Home" class="sidebar__menu_link">Home</a>
+                    <a href="#Table" class="sidebar__menu_link">Table</a>
+                    <a href="#Buttons" class="sidebar__menu_link">Buttons</a>
+                    <a href="#Slider" class="sidebar__menu_link">Slider</a>
+                    <a href="#Database" class="sidebar__menu_link">Table database</a>
+                    <a href="#Autocomplete" class="sidebar__menu_link">Autocomplete/GoogleMap</a>
+                </div>
+            </aside>
+            <main class="main-content" id="mainContent">
+                <section id="home">
+                   <p class="main-content__image">
+                        <img src="img/content_img.jpg" alt="main image" >
+                   </p>
+                </section>
+                <section id="tables">
+                    <div class="form__div_main">
+                        <form class="table__form">
+                                <div class="form__div_input">
+                                    <label for="rows" class="form__div__label">Rows</label>
+                                    <input type="text" id="rows">
+                                </div>
+                                <div class="form__div_input">
+                                    <label for="columns" class="form__div__label">Columns</label>
+                                    <input type="text" id="columns">
+                                </div>
+                                <div class="form__div_input">
+                                    <input type="button" value="Создать таблицу" class="div__input_button" id="button">
+                                </div>
+                        </form>
+                    </div>
+                </section>
+                <section id="buttons">
+                    <div id="div_button" class="buttons">
+                        <input value="coral" type="button" class = "buttons__grey_btn"/>
+                        <input value="yellow" type="button" class = "buttons__grey_btn"/>
+                        <input value="skyblue" type="button" class = "buttons__grey_btn"/>
+                    </div>
+                </section>
+                <section id="slider">
+               <div class="slider-container">
+                        <div class="slides">
+                           <!-- <img id="lastClone" src="img/slide4.jpg" alt="" class="slides__item">-->
+                            <img src="img/slide1.jpg" alt="" class="slides__item">
+                            <img src="img/slide2.jpg" alt="" class="slides__item">
+                            <img src="img/slide3.jpg" alt="" class="slides__item">
+                            <img src="img/slide4.jpg" alt="" class="slides__item">
+                            <img id="firstClone" src="img/slide1.jpg" alt="" class="slides__item">
+                        </div>
+               </div>
+                        <div class="btn-container">
+                            <div class="btn" id="prev">◀</div>
+                            <div class="btn" id="next">▶</div>
+                        </div>
+                </section>
+                <section id="database">
+                    <form action="" class="section__database_form" id="student-form">
+                        <div class="section__database_input">
+                            <label for="firstName">First Name
+                                <input type="text" class="form-input" id="firstName" placeholder="Tom">
+                                <span class="message_error" id="message-name">Имя с большой буквы, может содержать буквенные символы, пробел и "-"!!!</span>
+                                <span class="message_error" id="message-empty1">Поле не может быть пустым!</span>
+                            </label>
+                            <label for="lastName">
+                                Last Name
+                                <input type="text" class="form-input" id="lastName" placeholder="Smith">
+                                <span class="message_error" id="message-surname">Фамилия с большой буквы, может содержать буквенные символы, пробел и "-"!</span>
+                                <span class="message_error" id="message-empty2">Поле не может быть пустым!</span>
+                            </label>
+                            <label for="startYear">
+                                Start year
+                                <input type="number" class="form-input" id="startYear" placeholder="2000">
+                                <span class="message_error" id="message-sYear">Год может быть 4-х значным. Год в пределах от 1970 - 2025!</span>
+                                <span class="message_error" id="message-checkYear">Год начала обучения не может быть больше года конца обучения!</span>
+                                <span class="message_error" id="message-empty3">Поле не может быть пустым!</span>
+                            </label>
+                            <label for="endYear">
+                                End year
+                                <input type="number" class="form-input" id="endYear" placeholder="2005">
+                                <span class="message_error" id="message-eYear">Год может быть 4-х значным. Год в пределах от 1970 - 2025!</span>
+                                <span class="message_error" id="message-empty4">Поле не может быть пустым!</span>
+                            </label>
+                            <label for="age">
+                                Age
+                                <input type="number" class="form-input" id="age" placeholder="22">
+                                <span class="message_error" id="message-age">Возраст в пределах от 0 до 100!</span>
+                                <span class="message_error" id="message-empty5">Поле не может быть пустым!</span>
+                            </label>
+                            <div class="section__database_buttons">
+                                <input type="button" value="Save" class="button_save_inactive" id="button_save" disabled>
+                                <input type="button" value = "Edit" class="" id="button_edit">
+                                <input type="button" value="Clear form" class="" id="button_clear">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="section__database_table">
+                        <table class="student-table" border="1" id="student-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Start year</th>
+                                <th>End year</th>
+                                <th>Age</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section id="autocomplete">
+                    <div id="map"></div>
+                </section>
+            </main>
+        </main>
+    <footer class="footer" id="footer">
+        <p class="footer__description">&copy;2019 Cherkasenko Olga</p>
+    </footer>
+</div>
+</body>
+</html>
