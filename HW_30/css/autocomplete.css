@@ -1,0 +1,47 @@
+#map {
+    width: 60%;
+    height: 400px;
+    margin: 25px auto;
+}
+.autocomplete-wrapper {
+    width: 385px;
+    margin: 5px 0 0 25px;
+}
+.weather-wrapper {
+    float: right;
+    width: 200px;
+    margin-top: 22px;
+}
+.location-wrapper {
+    float: left;
+    width: 175px;
+}
+#inputAuto {
+    margin: -5px auto;
+}
+.weather-city__icon{
+    width: 20px;
+    height: 20px;
+}
+.weather-location {
+    width: 170px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+}
+.weather-desc {
+    margin: 0;
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 13px;
+    font-weight: bolder;
+    text-align: left;
+}
+@media screen and (max-width: 670px) {
+    .autocomplete-wrapper {
+        margin: -30px auto;
+    }
+}
